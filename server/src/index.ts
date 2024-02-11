@@ -22,7 +22,7 @@ const findSocketByName = (name: string) => {
 }
 
 const app = new Elysia()
-  .use(cors({ "origin": true }))
+  .use(cors({ "origin": ['https://elysia-chat-ten.vercel.app', 'https://localhost:3000'] }))
   .ws('/chat', {
     body: t.Object({
       message: t.String(),
