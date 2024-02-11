@@ -98,17 +98,12 @@ const port = 3000;
 const hostname = '0.0.0.0';
 const useTLS = true;
 
-Bun.serve({
-  port,
-  hostname,
-  fetch: (request) => {
-    return app.handle(request)
-  },
-  tls: useTLS ? {
+app.listen({
+  port, hostname, tls: useTLS ? {
     key: await Bun.file('/root/tls/key.pem').text(),
     cert: await Bun.file('/root/tls/cert.pem').text(),
-  } : {},
-});
+  } : {}
+})
 
 console.log(
   `🦊 Elysia is running at ${hostname}:${port}
