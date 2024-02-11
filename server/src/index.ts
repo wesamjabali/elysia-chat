@@ -93,11 +93,8 @@ const app = new Elysia()
   .get('/', () => {
     return 'Hello world.'
   })
-  .onBeforeHandle(() => {
-    console.log('onBeforeHandle')
-  })
 
-const port = 3000;
+const port = 8443;
 const hostname = '0.0.0.0';
 const useTLS = true;
 
