@@ -105,8 +105,8 @@ Bun.serve({
     return app.handle(request)
   },
   tls: useTLS ? {
-    key: await Bun.file('~/tls/key.pem').text(),
-    cert: await Bun.file('~/tls/cert.pem').text(),
+    key: await Bun.file('/root/tls/key.pem').text(),
+    cert: await Bun.file('/root/tls/cert.pem').text(),
   } : {},
 });
 
