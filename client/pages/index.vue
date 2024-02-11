@@ -1,8 +1,6 @@
 <template>
-    <div>
-        <MoleculeLogin class="center-input" v-if="!user" />
-        <MoleculeChatbox v-else />
-    </div>
+    <MoleculeLogin class="center-input" v-if="!user" />
+    <MoleculeChatbox v-else />
 </template>
 
 <script setup lang="ts">

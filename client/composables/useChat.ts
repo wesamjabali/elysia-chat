@@ -20,9 +20,6 @@ export const useChat = () => {
         ws.send({ message: message })
     }
 
-    onBeforeUnmount(() => {
-        ws.close()
-    })
 
     const ws = eden.chat.subscribe().on('message', handleMessage)
     ws.on('open', () => {
