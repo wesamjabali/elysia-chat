@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       title: 'Chat',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' },
+        { name: 'viewport', content: 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height' },
       ],
     },
   },

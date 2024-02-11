@@ -26,11 +26,15 @@ export const useChat = () => {
 
 
     const ws = eden.chat.subscribe().on('message', handleMessage)
-    ws.on('open', () => {
-        ws.send({ message: `/join ${user.value?.name}` })
-    }).on('message', (event) => {
-        console.log(event.data)
-    })
+        .on('open', () => {
+            ws.send({ message: `/join ${user.value?.name}` })
+        })
+        .on('message', (event) => {
+            console.log(event.data)
+        })
+        .on('error', (event) => {
+            console.error(event)
+        })
     isInitiated.value = true
 
     return { messages, messageInput, sendMessage }
