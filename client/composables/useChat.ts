@@ -9,6 +9,10 @@ export const useChat = () => {
 
     const handleMessage = ({ data }: EdenTreaty.OnMessage<any>) => {
         messages.value.push(data)
+
+        if (data.error) {
+            user.value = null
+        }
     }
 
 
