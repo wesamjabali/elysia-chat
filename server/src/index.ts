@@ -102,7 +102,7 @@ app.listen({
   port, hostname, tls: useTLS ? {
     key: await Bun.file('/root/tls/key.pem').text(),
     cert: await Bun.file('/root/tls/cert.pem').text(),
-    ca: await Bun.file('/root/tls/ca.pem').text(),
+    // ca: await Bun.file('/root/tls/ca.pem').text(),
   } : {}
 })
 
