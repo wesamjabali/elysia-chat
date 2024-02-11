@@ -93,6 +93,9 @@ const app = new Elysia()
   .get('/', () => {
     return 'Hello world.'
   })
+  .onError(error => {
+    console.error(error)
+  })
 
 const port = 443;
 const hostname = '0.0.0.0';
