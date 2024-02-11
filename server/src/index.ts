@@ -93,10 +93,26 @@ const app = new Elysia()
   .get('/', () => {
     return 'Hello world.'
   })
-  .listen({ hostname: "0.0.0.0", port: 3000 })
+
+const port = 3000;
+const hostname = '0.0.0.0';
+const useTLS = true;
+
+Bun.serve({
+  port,
+  hostname,
+  fetch: (request) => {
+    return app.handle(request)
+  },
+  tls: useTLS ? {
+    key: await Bun.file('~/tls/key.pem').text(),
+    cert: await Bun.file('~/tls/cert.pem').text(),
+  } : {},
+});
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at ${hostname}:${port}
+useTLS: ${useTLS}`
 );
 
 export type App = typeof app;
