@@ -10,6 +10,7 @@
 <style lang="scss">
 .layout {
     height: 100vh;
+    height: 100dvh;
     width: 100%;
 }
 </style>
