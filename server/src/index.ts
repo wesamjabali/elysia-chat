@@ -94,7 +94,7 @@ const app = new Elysia()
     return 'Hello world.'
   })
 
-const port = 8443;
+const port = 443;
 const hostname = '0.0.0.0';
 const useTLS = true;
 
