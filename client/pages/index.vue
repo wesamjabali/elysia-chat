@@ -1,6 +1,6 @@
 <template>
     <div>
-        <MoleculeLogin v-if="!user" />
+        <MoleculeLogin class="center-input" v-if="!user" />
         <MoleculeChatbox v-else />
     </div>
 </template>
@@ -10,3 +10,12 @@ import { useUser } from '~/composables/useUser';
 
 const { user } = useUser()
 </script>
+
+<style lang="scss">
+.center-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+</style>

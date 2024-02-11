@@ -13,3 +13,11 @@ const onLogin = () => {
     setUser({ name: username.value })
 }
 </script>
+
+<style lang="scss">
+.login-input {
+    height: 3rem;
+    width: 15rem;
+    padding: 0.5rem;
+}
+</style>
