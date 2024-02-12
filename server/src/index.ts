@@ -33,6 +33,7 @@ const app = new Elysia()
       self: t.Optional(t.Boolean({ default: false })),
       error: t.Optional(t.Nullable(t.String({ default: null }))),
     }),
+    error: (error) => { console.log(error) },
     open: async (ws) => {
       console.log('open' + ws.id)
       for (const message of chatMessages) {
@@ -90,12 +91,13 @@ const app = new Elysia()
       }
     },
   })
-  .get('/', () => {
-    return 'Hello world.'
-  })
   .onError(error => {
     console.error(error)
   })
+  .get('/', () => {
+    return 'Hello world.'
+  })
+
 
 const port = 443;
 const hostname = '0.0.0.0';
