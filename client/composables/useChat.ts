@@ -35,6 +35,7 @@ export const useChat = () => {
         .on('error', (event) => {
             console.error(event)
         })
+        .on('close', (event) => { console.log(event) })
     isInitiated.value = true
 
     return { messages, messageInput, sendMessage }
