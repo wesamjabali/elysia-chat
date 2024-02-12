@@ -33,7 +33,6 @@ const app = new Elysia()
       self: t.Optional(t.Boolean({ default: false })),
       error: t.Optional(t.Nullable(t.String({ default: null }))),
     }),
-    // error: (error) => { console.log(error) },
     error: (a) => {
       console.log(a.error)
     },
@@ -94,11 +93,12 @@ const app = new Elysia()
       }
     },
   })
-  .onError(error => {
-    console.error(error)
-  })
   .get('/', () => {
     return 'Hello world.'
+  })
+  .onError(error => {
+    console.error(error.code)
+    return error.code;
   })
 
 
