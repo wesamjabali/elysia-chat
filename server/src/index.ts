@@ -33,7 +33,10 @@ const app = new Elysia()
       self: t.Optional(t.Boolean({ default: false })),
       error: t.Optional(t.Nullable(t.String({ default: null }))),
     }),
-    error: (error) => { console.log(error) },
+    // error: (error) => { console.log(error) },
+    error: (a) => {
+      console.log(a.error)
+    },
     open: async (ws) => {
       console.log('open' + ws.id)
       for (const message of chatMessages) {
